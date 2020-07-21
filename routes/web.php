@@ -80,7 +80,7 @@ Route::prefix('category')->group(function () {
     Route::get('delete/{id}', 'OtherController@destroyCategory');
 });
 
-Route::get('/', function () {
+Route::get('/home', function () {
     if(Auth::user()->roles->pluck( 'name' )->contains( 'Admin' ))
     {
         return redirect()->route('dashboard');
