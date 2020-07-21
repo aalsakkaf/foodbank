@@ -111,7 +111,7 @@ crossorigin=""></script>
         @foreach (Auth::user()->documents as $document)
           @if ($document->name == "Avatar")
         <div class="image" >
-          <img src="{{asset('storage/'.$document->url)}}" class="img-circle elevation-3"style="width: 42px; height: 42px; top:10px; left: 10px;border-radius: 50%;"> 
+          <img src="{{asset('storage/avatar'.$document->url)}}" class="img-circle elevation-3"style="width: 42px; height: 42px; top:10px; left: 10px;border-radius: 50%;"> 
         </div>
         @endif
         @endforeach
