@@ -190,7 +190,7 @@ class UserController extends Controller
             $fileName = 'avatar-'.time().'.'.$file->getClientOriginalExtension();
             // Save the file
             //dd($request->user()->id);
-            $path = $file->storeAs('avatar'. $request->id, $fileName, 'public');
+            $path = $file->storeAs('avatar/'. $request->id, $fileName, 'public');
         }  
         // $document = new Document();
         //$user = User::find($request->id);
