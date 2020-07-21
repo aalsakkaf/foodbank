@@ -100,16 +100,16 @@
             <div class="modal-body">
                 <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ old('name',$point->name)}}">
+                <input type="text" class="form-control" id="name" name="name" value="{{ old($point->name)}}">
               </div>
               <div class="form-group">
                 <label for="name">Description:</label>
-                <input type="text" class="form-control" id="description" name="description" value="{{ old('description',$point->description)}}">
+                <input type="text" class="form-control" id="description" name="description" value="{{ old($point->description)}}">
               </div>
               
               <div class="form-group">
                 <label for="name">Points:</label>
-                <input type="number" class="form-control" id="points" name="points" value="{{old('points',$point->points)}}">
+                <input type="number" class="form-control" id="points" name="points" value="{{old($point->points)}}">
               </div>
              
             </div>
