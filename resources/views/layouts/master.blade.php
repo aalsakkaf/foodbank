@@ -265,7 +265,7 @@ crossorigin=""></script>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('point')}}" class="nav-link">
+                <a href="{{url('reward')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Reward Points</p>
                   </a>
