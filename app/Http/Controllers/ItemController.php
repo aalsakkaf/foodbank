@@ -59,7 +59,7 @@ class ItemController extends Controller
         // Generate a file name with extension
         $fileName = 'foodItem-'.time().'.'.$file->getClientOriginalExtension();
         // Save the file
-        $paths[] = $file->storeAs('foodItems/'.$request->user()->id, $fileName);
+        $paths[] = $file->storeAs('foodItems/'.$request->user()->id, $fileName, 'public');
     }
 }
         $inputData = $request->except(['_token']);
@@ -92,7 +92,7 @@ class ItemController extends Controller
             // Generate a file name with extension
             $fileName = 'foodItem-'.time().'.'.$file->getClientOriginalExtension();
             // Save the file
-            $path = $file->storeAs('foodItems/'.$request->user()->id, $fileName);
+            $path = $file->storeAs('foodItems/'.$request->user()->id, $fileName, 'public');
         
     }
             $inputData = $request->except(['_token']);
@@ -156,7 +156,7 @@ class ItemController extends Controller
             $fileName = 'foodItem-'.time().'.'.$file->getClientOriginalExtension();
             // Save the file
             //dd($request->user()->id);
-            $path = $file->storeAs('foodItems/'.$request->user()->id, $fileName);
+            $path = $file->storeAs('foodItems/'.$request->user()->id, $fileName, 'public');
     }
             $item = foodItem::whereId($request->id)->firstOrFail();
             $inputData = $request->except(['_token']);

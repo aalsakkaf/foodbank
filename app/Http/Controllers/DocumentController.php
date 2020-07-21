@@ -62,7 +62,7 @@ class DocumentController extends Controller
         // Generate a file name with extension
         $fileName = 'id-'.time().'.'.$file->getClientOriginalExtension();
         // Save the file
-        $path = $file->storeAs('id/'. Auth::user()->id, $fileName);
+        $path = $file->storeAs('id/'. Auth::user()->id, $fileName, 'public');
 
         $document = new Document();
             $document->name = "ID";
@@ -78,7 +78,7 @@ class DocumentController extends Controller
         // Generate a file name with extension
         $fileName = 'letter-'.time().'.'.$file->getClientOriginalExtension();
         // Save the file
-        $path = $file->storeAs('letter/'. Auth::user()->id, $fileName);
+        $path = $file->storeAs('letter/'. Auth::user()->id, $fileName, 'public');
 
         $document = new Document();
             $document->name = "Reference Letter";
@@ -93,7 +93,7 @@ class DocumentController extends Controller
         // Generate a file name with extension
         $fileName = 'other-'.time().'.'.$file->getClientOriginalExtension();
         // Save the file
-        $path = $file->storeAs('other/'. Auth::user()->id, $fileName);
+        $path = $file->storeAs('other/'. Auth::user()->id, $fileName, 'public');
 
         $document = new Document();
             $document->name = "Other Document";
@@ -152,7 +152,7 @@ class DocumentController extends Controller
             
             $fileName = $document->name.'-'.time().'.'.$file->getClientOriginalExtension();
             // Save the file
-            $path = $file->storeAs($document->name.'/'. Auth::user()->id, $fileName);
+            $path = $file->storeAs($document->name.'/'. Auth::user()->id, $fileName, 'public');
                 $document->url = $path;
                 $document->user_id = Auth::user()->id;
                 $document->save();
