@@ -49,13 +49,13 @@ class OtherController extends Controller
         $status = Status::whereId($id)->firstOrFail();
         $status->name = $request->name;
         $status->save();
-        return redirect()->route('status.index')->with('status', 'The status with ID number ('.$id.') has been updated!');
+        return redirect()->route('status.index')->with('status', 'The status has been updated!');
     }
 
     public function destroyStatus($id)
     {
         Status::destroy($id);
-        return redirect()->route('status.index')->with('status', 'The status with ID number ('.$id.') has been deleted!');
+        return redirect()->route('status.index')->with('status', 'The status has been deleted!');
 
     }
 
@@ -105,7 +105,7 @@ class OtherController extends Controller
     public function destroyCategory($id)
     {
         FoodCategory::destroy($id);
-        return redirect()->route('category.index')->with('status', 'The category with ID number ('.$id.') has been deleted!');
+        return redirect()->route('category.index')->with('status', 'The category has been deleted!');
 
     }
 }
