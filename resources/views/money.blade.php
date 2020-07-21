@@ -55,9 +55,10 @@
                        <th >Date</th>
                    </tr>
                   </thead>
-                  @if(!$data->isEmpty())
-                @foreach($data as $money)  
+                 
                   <tbody>
+                    @if(!$data->isEmpty())
+                    @foreach($data as $money)  
                 <tr>
                 @role('Admin')
                 <td>{{$money->user->name}}</td>
@@ -65,8 +66,13 @@
                 <td>{{$money->amount}}</td>
                 <td>{{$money->created_at}}</td>
                 </tr>
-                </tbody>
                 @endforeach
+                @else
+                <tr>
+                  <td>No Money Donation found</td>
+                </tr>
+                @endif
+                </tbody>
                   <tfoot>
                    <tr>
                                    <td colspan="1" allign="right">&nbsp;</td>
@@ -77,9 +83,6 @@
                    </tr>
                   </tfoot>
               </table>
-              @else
-                  <p>No Money Donation found</p>
-              @endif
     </div>
 </div>
       
