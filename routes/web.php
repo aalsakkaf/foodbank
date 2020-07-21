@@ -96,13 +96,15 @@ Route::get('/', function () {
     {
         return redirect()->route('donation.index');
     }
-    // } else {
-    //     return redirect()->route('login');
+    // if(Auth::guest())
+    // {
+    //     // do what you need to do
+    //     return redirect()->route('welcome');
     // }
 });
 
 });
-Route::get('welcome', 'PostController@welcome')->name('welcome');
+Route::get('/', 'PostController@welcome')->name('welcome');
 
 Route::get('register1', 'UserController@register1')->name('users.register1');
 Route::post('register1', 'UserController@save')->name('users.save');
