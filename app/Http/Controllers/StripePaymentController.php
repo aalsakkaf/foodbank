@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Session;
 use Stripe;
 use App\Money;
+use App\rewardPoint;
+
 use Illuminate\Support\Facades\Auth;
 use App\Notifications\donationNotification;
 
@@ -56,6 +58,7 @@ class StripePaymentController extends Controller
             $moneyDonation = new Money();
             $moneyDonation->amount = $request->amount;
             $moneyDonation->user_id = Auth::user()->id;
+            $moneyDonation->rewardPoint_id = rewardPoint::where('name','Money Donation')->first()->id;
             $moneyDonation->save();
 
             $user = Auth::user();
