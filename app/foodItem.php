@@ -10,7 +10,7 @@ class foodItem extends Model
     public $table = "foodItems";
 
     public function donation(){
-        return $this->belongsTo('App\donation', 'donation_id');
+        return $this->belongsTo('App\Donation', 'donation_id');
     }
 
     public function FoodCategory()
