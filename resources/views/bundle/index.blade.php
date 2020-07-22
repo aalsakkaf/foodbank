@@ -79,7 +79,7 @@
 </div>
     <div class="row">
         <div class="col-12">
-        <a href="{{url('bundle/create')}}" class="btn btn-success float-right">Create Food Bundle</a>
+        <a href="{{route('bundle.create')}}" class="btn btn-success float-right">Create Food Bundle</a>
         </div>
       </div>
 </div>
